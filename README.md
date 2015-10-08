@@ -7,7 +7,7 @@ A simple implementation of the Value Object pattern (http://c2.com/cgi/wiki?Valu
 Via Composer
 
 ``` bash
-$ composer require chalcedonyt/valueobject
+$ composer require chalcedonyt/valueobject:1.*
 ```
 
 Once composer is finished, add the service provider to the `providers` array in `app/config/app.php`:
