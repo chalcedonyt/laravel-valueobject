@@ -15,6 +15,16 @@ abstract class ValueObject
         return json_encode(get_object_vars($this), true);
     }
 
+    /**
+     * Generic getter
+     */
+    public function __get($property)
+    {
+        if( property_exists( $this, $property )){
+            return $this -> $property;
+        }
+    }
+
     public function toArray()
     {
         return get_object_vars($this);
