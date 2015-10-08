@@ -1,0 +1,35 @@
+{
+    "name": "chalcedonyt/laravel-valueobject",
+    "description": "Helpers to implement the Value Object pattern in Laravel 5",
+    "keywords": [
+        "league",
+        "value object",
+        "valueobject"
+    ],
+    "homepage": "https://github.com/chalcedonyt/laravel-valueobject",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Timothy Teoh",
+            "email": "chalcedonyt@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chalcedonyt\\ValueObject\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
