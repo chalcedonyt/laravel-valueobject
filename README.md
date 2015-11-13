@@ -69,5 +69,6 @@ $obj -> __toString(); //"{"var1":1,"var2":2}"
 ```
 
 ## Change log
+* 1.1 You can now create a ValueObject inside a directory by specifying it in the classname, e.g. `php artisan make:valueobject MyDir\\MyObject`
 
 Please see [CHANGELOG] for more information what has changed recently.

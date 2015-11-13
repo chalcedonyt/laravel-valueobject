@@ -56,16 +56,18 @@ class ValueObjectGenerator extends Command
     public function handle()
     {
         try {
-
             // replace all space after ucwords
             $classname = preg_replace('/\s+/', '', ucwords($this->argument('classname')));
-
-
-            //retrieves store directory configuration
+            $namespace = 'App\ValueObjects';
             $directory = app_path('ValueObjects/');
 
-            //retrieves namespace configuration
-            $namespace = 'App\ValueObjects';
+            //retrieves store directory configuration
+            if( strpos($classname, '\\') !== false ){
+                $class_dirs = substr($classname, 0, strrpos( $classname, '\\'));
+                $directory = $directory.DIRECTORY_SEPARATOR.str_replace('\\', DIRECTORY_SEPARATOR, $class_dirs);
+                $namespace = $namespace.'\\'.$class_dirs;
+                $classname = substr($classname, strrpos($classname, '\\') + 1);
+            }
 
             is_dir($directory) ?: $this->file->makeDirectory($directory, 0755, true);
 
